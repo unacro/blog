@@ -4,12 +4,12 @@ languageDirection = "ltr"
 weight = 2
 
 title = "Everybody Wants Some"
-copyright = "&copy; 2024"
+copyright = "&copy; 2024 Kerria"
 
 [params]
 dateFormat = "2006-01-02"
 
-mainSections = ["samples"]
+mainSections = ["posts"]
 description = "一款基于Tailwindcss的强大且轻量的Hugo主题"
 
 [params.author]

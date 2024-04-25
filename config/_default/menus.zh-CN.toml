@@ -40,6 +40,12 @@ weight = 40
 # target = "_blank"
 
 [[main]]
+identifier = "主题"
+weight = 90
+[main.params]
+action = "appearance"
+
+[[main]]
 identifier = "搜索"
 weight = 99
 [main.params]
@@ -72,10 +78,14 @@ weight = 20
 
 [[footer]]
 name = "站点地图"
-pageRef = "sitemap.xml"
+url = "sitemap.xml"
 weight = 30
+[footer.params]
+target = "_blank"
 
 [[footer]]
 name = "运行状态"
-pageRef = "https://uptime.osrp.run/"
+url = "https://uptime.osrp.run/"
 weight = 40
+[footer.params]
+target = "_blank"
