@@ -11,40 +11,45 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
-  name = "文档"
-  pageRef = "docs"
-  weight = 10
+name = "文章"
+pageRef = "posts"
+weight = 10
 
 [[main]]
-  name = "示例"
-  pageRef = "samples"
-  weight = 20
+name = "分类"
+pageRef = "categories"
+weight = 20
 
 [[main]]
-  name = "用户"
-  pageRef = "users"
-  weight = 30
+name = "标签"
+pageRef = "tags"
+weight = 30
 
 [[main]]
-  name = "GitHub"
-  url = "https://github.com/jpanther/congo"
-  weight = 40
-  [main.params]
-    icon = "github"
-    showName = false
-    target = "_blank"
+name = "关于"
+pageRef = "about"
+weight = 40
+
+# [[main]]
+# name = "GitHub"
+# url = "https://github.com/unacro/blog"
+# weight = 50
+# [main.params]
+# icon = "github"
+# showName = false
+# target = "_blank"
 
 [[main]]
-  identifier = "搜索"
-  weight = 99
-  [main.params]
-    action = "search"
+identifier = "搜索"
+weight = 99
+[main.params]
+action = "search"
 
-[[main]]
-  identifier = "语言"
-  weight = 100
-  [main.params]
-    action = "locale"
+# [[main]]
+# identifier = "语言"
+# weight = 100
+# [main.params]
+# action = "locale"
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
@@ -54,3 +59,23 @@
 #   name = "标签"
 #   pageRef = "tags"
 #   weight = 10
+
+[[footer]]
+name = "版权声明"
+pageRef = "copyright"
+weight = 10
+
+[[footer]]
+name = "隐私政策"
+pageRef = "privacy"
+weight = 20
+
+[[footer]]
+name = "站点地图"
+pageRef = "sitemap.xml"
+weight = 30
+
+[[footer]]
+name = "运行状态"
+pageRef = "https://uptime.osrp.run/"
+weight = 40
