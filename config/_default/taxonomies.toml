@@ -1,1 +1,4 @@
-game = "games"
+category = "categories"
+series = "series"
+tag = "tags"
+# topic = "topics"

@@ -3,17 +3,25 @@
 } */
 
 body {
-    font-family: "LXGW WenKai GB Screen", sans-serif;
+    /* font-family: "LXGW WenKai GB Screen", sans-serif; */
+    font-family: "LXGW WenKai", sans-serif;
     font-weight: normal;
 }
 
 article {
-    font-family: "LXGW WenKai Screen", sans-serif;
+    /* font-family: "LXGW WenKai Screen", sans-serif; */
+    font-family: "LXGW WenKai", sans-serif;
 }
 
 code,
 kbd,
 samp,
 pre {
-    font-family: "LXGW WenKai Mono Screen", monospace;
+    /* font-family: "LXGW WenKai Mono Screen", monospace; */
+    font-family: "LXGW WenKai Mono", monospace;
+}
+
+.katex-display {
+    overflow: visible;
+    /* 默认为 hidden, 生怕你看全了公式是吧, 神金 */
 }

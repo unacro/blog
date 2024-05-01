@@ -1,24 +1,33 @@
 languageCode = "zh-CN"
 languageName = "简体中文"
 languageDirection = "ltr"
-weight = 2
+hasCJKLanguage = true
+weight = 1
 
 title = "Everybody Wants Some"
 copyright = "&copy; 2024 Kerria"
 
 [params]
-dateFormat = "2006-01-02"
-
+dateFormat = "2006-01-02 15:04 -07:00 Monday"
 mainSections = ["posts"]
-description = "一款基于Tailwindcss的强大且轻量的Hugo主题"
+description = "unacro 的个人博客"
 
 [params.author]
 name = "Kerria"
 image = "img/author.jpg"
-headline = "无所谓的明天却后悔的昨夜<br>挣扎在所难免放纵却无条件"
+headline = "Everybody wants some"
 bio = "孤岛高山何其多 而你从来不抬头"
 links = [
+  { email = "mailto:po@ews.ink" },
   { github = "https://github.com/unacro" },
-  { discord = "https://nav.osrp.run/s/discord" },
-  { afadian = "https://afadian.com/unacro" },
 ]
+
+[permalinks]
+[permalinks.page]
+posts = '/posts/:year/:slugorfilename/'
+tutorials = '/training/:slugorfilename/'
+[permalinks.section]
+posts = '/posts/'
+tutorials = '/training/'
+# [permalinks.term]
+# tags = '/:slugorfilename/'

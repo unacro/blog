@@ -14,21 +14,33 @@
 name = "文章"
 pageRef = "posts"
 weight = 10
+[main.params]
+icon = "edit"
+showName = true
 
 [[main]]
 name = "分类"
 pageRef = "categories"
 weight = 20
+[main.params]
+icon = "list"
+showName = true
 
 [[main]]
 name = "标签"
 pageRef = "tags"
 weight = 30
+[main.params]
+icon = "tag"
+showName = true
 
 [[main]]
 name = "关于"
 pageRef = "about"
 weight = 40
+[main.params]
+icon = "lightbulb"
+showName = true
 
 # [[main]]
 # name = "GitHub"
@@ -78,7 +90,7 @@ weight = 20
 
 [[footer]]
 name = "站点地图"
-url = "sitemap.xml"
+url = "/sitemap.xml"
 weight = 30
 [footer.params]
 target = "_blank"
