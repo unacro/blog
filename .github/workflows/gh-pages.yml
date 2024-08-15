@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-22.04
     env:
       HUGO_CACHEDIR: /tmp/hugo_cache
+    permissions:
+      contents: write
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
@@ -25,15 +27,15 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - uses: actions/cache@v4
-        with:
-          path: ${{ env.HUGO_CACHEDIR }}
-          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-hugomod-
+      # - uses: actions/cache@v4
+      #   with:
+      #     path: ${{ env.HUGO_CACHEDIR }}
+      #     key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-hugomod-
 
       - name: Build
-        run: hugo --environment production --minify
+        run: hugo --environment production --minify --gc
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
