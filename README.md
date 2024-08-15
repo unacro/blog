@@ -1,6 +1,8 @@
 # Personal Blog
 
-<center><h2>Everybody Wants Some</h2></center>
+<div align="center">
+    <h2>Everybody Wants Some</h2>
+</div>
 
 > [!IMPORTANT]
 > Powered by [Hugo](https://github.com/gohugoio/hugo) & [Blowfish](https://github.com/nunocoracao/blowfish).
