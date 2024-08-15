@@ -1,0 +1,14 @@
+{{- if gt (len .Params) 0 -}}
+	{{- $shapeCode := "" -}}
+	{{- $count := "" -}}
+    {{- if .IsNamedParams -}}
+		{{- $shapeCode = .Get "code" -}}
+		{{- $count = .Get "count" -}}
+	{{- else -}}
+		{{- $shapeCode = .Get 0 -}}
+		{{- $count = .Get 1 -}}
+	{{- end -}}
+	<a href="https://viewer.shapez.io?{{- replace $shapeCode `:` `.` -}}" target="_blank" rel="noopener noreferrer"><img class="inline align-center" style="margin:.2rem;height:2rem;" src="/images/shapez/{{- replace $shapeCode `:` `_` -}}.png" alt="{{- $shapeCode -}}" title="{{- $shapeCode -}}"></a>{{- if ne $count "" -}}×{{- $count -}}{{- end -}}
+{{- else -}}
+	{{- errorf "The %q shortcode requires one argument at least. See %s" .Name .Position -}}
+{{- end -}}

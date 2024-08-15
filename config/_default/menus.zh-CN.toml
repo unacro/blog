@@ -1,7 +1,7 @@
 # -- Main Menu --
 # The main menu is displayed in the header at the top of the page.
 # Acceptable parameters are name, pageRef, page, url, title, weight.
-#
+# 
 # The simplest menu configuration is to provide:
 #   name = The name to be displayed for this menu link
 #   pageRef = The identifier of the page or section to link to
@@ -10,73 +10,85 @@
 # overridden by providing a weight value. The menu will then be
 # ordered by weight from lowest to highest.
 
+#[[main]]
+#  name = "Blog"
+#  pageRef = "posts"
+#  weight = 10
+
 [[main]]
 name = "文章"
-pageRef = "posts"
+pre = "edit"
 weight = 10
-[main.params]
-icon = "edit"
-showName = true
+
+[[main]]
+name = "科技"
+parent = "文章"
+pre = "code"
+pageRef = "posts/tech"
+weight = 11
+
+[[main]]
+name = "游戏"
+parent = "文章"
+pre = "gamepad"
+pageRef = "posts/game"
+weight = 12
+
+[[main]]
+name = "生活"
+parent = "文章"
+pre = "mug-hot"
+pageRef = "posts/life"
+weight = 13
+
+[[main]]
+name = "所有文章"
+parent = "文章"
+pre = "bars"
+pageRef = "posts"
+weight = 19
 
 [[main]]
 name = "分类"
+pre = "list"
 pageRef = "categories"
 weight = 20
-[main.params]
-icon = "list"
-showName = true
 
 [[main]]
 name = "标签"
+pre = "tag"
 pageRef = "tags"
 weight = 30
-[main.params]
-icon = "tag"
-showName = true
 
 [[main]]
 name = "关于"
+pre = "email"
 pageRef = "about"
-weight = 40
-[main.params]
-icon = "lightbulb"
-showName = true
-
-# [[main]]
-# name = "GitHub"
-# url = "https://github.com/unacro/blog"
-# weight = 50
-# [main.params]
-# icon = "github"
-# showName = false
-# target = "_blank"
-
-[[main]]
-identifier = "主题"
 weight = 90
-[main.params]
-action = "appearance"
 
-[[main]]
-identifier = "搜索"
-weight = 99
-[main.params]
-action = "search"
+[[subnavigation]]
+name = "我有一个主意"
+pre = "lightbulb"
+pageRef = "ideas"
+weight = 10
 
-# [[main]]
-# identifier = "语言"
-# weight = 100
-# [main.params]
-# action = "locale"
+[[subnavigation]]
+name = "有空一起挨打"
+pre = "skull-crossbones"
+pageRef = "co-op"
+weight = 20
+
+[[subnavigation]]
+name = "这位更是重在参与"
+pre = "ghost"
+pageRef = "projects"
+weight = 30
+
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
 # the copyright notice. Configure as per the main menu above.
 
-# [[footer]]
-#   name = "标签"
-#   pageRef = "tags"
-#   weight = 10
 
 [[footer]]
 name = "版权声明"
@@ -92,12 +104,8 @@ weight = 20
 name = "站点地图"
 url = "/sitemap.xml"
 weight = 30
-[footer.params]
-target = "_blank"
 
 [[footer]]
 name = "运行状态"
 url = "https://uptime.osrp.run/"
 weight = 40
-[footer.params]
-target = "_blank"

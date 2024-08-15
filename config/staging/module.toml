@@ -3,12 +3,8 @@ disable = false
 path = "github.com/unacro/games-static-database"
 
 [[imports]]
-disable = false
+disable = true                              # 禁用云端的 Go module, 使用本地的 Git submodule
 path = "github.com/nunocoracao/blowfish/v2"
-
-[[imports]]
-disable = false
-path = "github.com/unacro/hugo-theme-blowfish-mod"
 
 [[imports]]
 disable = false

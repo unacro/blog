@@ -5,5 +5,6 @@ externalUrl: ""
 summary: ""
 showReadingTime: false
 _build:
-  render: "never"
+  render: "false"
+  list: "local"
 ---

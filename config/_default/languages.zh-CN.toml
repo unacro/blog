@@ -1,33 +1,89 @@
-languageCode = "zh-CN"
+disabled = false
+languageCode = "zh-cn"
 languageName = "简体中文"
-languageDirection = "ltr"
 hasCJKLanguage = true
 weight = 1
-
 title = "Everybody Wants Some"
-copyright = "&copy; 2024 Kerria"
 
 [params]
-dateFormat = "2006-01-02 15:04 -07:00 Monday"
-mainSections = ["posts"]
-description = "unacro 的个人博客"
+displayName = "简体中文"
+isoCode = "zh-cn"
+rtl = false
+# dateFormat = "2006-01-02 15:04 -07:00 Monday"
+dateFormat = "2006-01-02 Mon"
+logo = "img/logo.svg"
+# secondaryLogo = "img/secondary-logo.png" # 反色 Logo
+description = "Atypist 的碎碎念"
+copyright = "&copy; 2015 - { year } Atypist"
 
 [params.author]
-name = "Kerria"
+name = "Atypist"         # Atypical Mortal
+email = "po@ews.ink"
 image = "img/author.jpg"
+# imageQuality = 96
 headline = "Everybody wants some"
+# customFooter = "当时只道是寻常"
 bio = "孤岛高山何其多 而你从来不抬头"
 links = [
-  { email = "mailto:po@ews.ink" },
+  { link = "https://osrp.run/" },
+  { discord = "https://discord.gg/faJTKGbtCE" },
+  { telegram = "https://t.me/atypist" },
+  # { mastodon = "https://mastodon.instance/@username" },
+  # { bangumi = "https://bgm.tv/" },
+  { steam = "https://steamcommunity.com/profiles/76561198186170037" },
+  # { itch-io = "https://unacro.itch.io" },
   { github = "https://github.com/unacro" },
+  # { keybase = "https://keybase.io/unacro" },
+  # { orcid = "https://orcid.org/0009-0007-9026-4526" },
+  { envelope = "mailto:po@ews.ink" },
+  { rss = "/index.xml" },
+  #     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
+  #     { apple = "https://www.apple.com" },
+  #     { blogger = "https://username.blogspot.com/" },
+  #     { bluesky = "https://bsky.app/profile/username" },
+  #     { codepen = "https://codepen.io/username" },
+  #     { dev = "https://dev.to/username" },
+  #     { dribbble = "https://dribbble.com/username" },
+  #     { facebook = "https://facebook.com/username" },
+  #     { flickr = "https://www.flickr.com/photos/username/" },
+  #     { foursquare = "https://foursquare.com/username" },
+  #     { gitlab = "https://gitlab.com/username" },
+  #     { google = "https://www.google.com/" },
+  #     { hashnode = "https://username.hashnode.dev" },
+  #     { instagram = "https://instagram.com/username" },
+  #     { kickstarter = "https://www.kickstarter.com/profile/username" },
+  #     { lastfm = "https://lastfm.com/user/username" },
+  #     { linkedin = "https://linkedin.com/in/username" },
+  #     { medium = "https://medium.com/username" },
+  #     { microsoft = "https://www.microsoft.com/" },
+  #     { patreon = "https://www.patreon.com/username" },
+  #     { pinterest = "https://pinterest.com/username" },
+  #     { reddit = "https://reddit.com/user/username" },
+  #     { researchgate = "https://www.researchgate.net/profile/username" },
+  #     { slack = "https://workspace.url/team/userid" },
+  #     { snapchat = "https://snapchat.com/add/username" },
+  #     { soundcloud = "https://soundcloud.com/username" },
+  #     { spotify = "https://open.spotify.com/user/userid" },
+  #     { stack-overflow = "https://stackoverflow.com/users/userid/username" },
+  #     { threads = "https://www.threads.net/@username" },
+  #     { tiktok = "https://tiktok.com/@username" },
+  #     { tumblr = "https://username.tumblr.com" },
+  #     { twitch = "https://twitch.tv/username" },
+  #     { twitter = "https://twitter.com/username" },
+  #     { x-twitter = "https://twitter.com/username" },
+  #     { whatsapp = "https://wa.me/phone-number" },
+  #     { youtube = "https://youtube.com/username" },
+  #     { ko-fi = "https://ko-fi.com/username" },
+  #     { codeberg = "https://codeberg.org/username"},
 ]
 
-[permalinks]
-[permalinks.page]
-posts = '/posts/:year/:slugorfilename/'
-tutorials = '/training/:slugorfilename/'
-[permalinks.section]
-posts = '/posts/'
-tutorials = '/training/'
+# https://gohugo.io/content-management/urls/#permalinks
+# [permalinks]
+# [permalinks.page]
+# posts = '/posts/:year/:slugorfilename/'
+# tutorials = '/training/:slugorfilename/'
+# [permalinks.section]
+# posts = '/posts/'
+# tutorials = '/training/'
 # [permalinks.term]
 # tags = '/:slugorfilename/'

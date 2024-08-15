@@ -3,7 +3,7 @@ disable = false
 path = "github.com/unacro/games-static-database"
 
 [[imports]]
-disable = false
+disable = true
 path = "github.com/nunocoracao/blowfish/v2"
 
 [[imports]]
