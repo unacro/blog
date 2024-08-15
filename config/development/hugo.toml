@@ -1,6 +1,27 @@
 theme = "blowfish"
-baseURL = "http://localhost:1313/"
+# baseURL = "http://dev.ews.internal/" # 仅当编译时有效
 
 buildDrafts = true
 buildExpired = true
 buildFuture = true
+
+[languages.zh-cn]
+title = "EWS 本地调试中"
+
+
+[[module.imports]]
+# 禁用远程的 Hugo module(Go module) 而使用 .Site.Params.theme 设置的本地主题(Git submodule)
+disable = true
+path = "github.com/nunocoracao/blowfish/v2"
+
+[[module.imports]]
+disable = false
+path = "github.com/unacro/hugo-theme-blowfish-mod"
+
+[[module.imports]]
+disable = false
+path = "github.com/unacro/games-static-database"
+
+[[module.imports]]
+disable = false
+path = "github.com/unacro/hugo-shortcodes"

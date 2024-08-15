@@ -6,55 +6,55 @@ $env:HUGO_NOCODB_TOKEN = "This is a NocoDB token @$(Get-Date -Format "yyyy-MM-dd
 [string]$Script:ScriptPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
 [string[]]$Script:CommandString = @(
   # https://gohugo.io/commands/hugo_server/
-  # --disableBrowserError      do not show build errors in the browser
-  # --disableFastRender        enables full re-renders on changes
-  # --forceSyncStatic          copy all files when static is changed.
-  # --noHTTPCache              prevent HTTP caching
-  # --printUnusedTemplates
-  # --panicOnWarning ``
+  # --appendPort false 无效 原因不明
+  # --panicOnWarning
   @"
 hugo server ``
-  --gc ``
-  --logLevel info ``
-  --navigateToChanged ``
+  --baseURL "http://dev.ews.internal/" ``
   --port ${Script:Port} ``
-  --printMemoryUsage --printPathWarnings ``
+  --appendPort false ``
+  --printI18nWarnings --printMemoryUsage --printPathWarnings --printUnusedTemplates ``
+  --logLevel debug ``
+  --disableBrowserError ``
   --watch ``
+  --noHTTPCache ``
   --forceSyncStatic ``
-  --renderToMemory
+  --cleanDestinationDir ``
+  --renderToMemory ``
+  --gc
 "@, # development 开发网站本身 (采用本地主题 渲染远程仓库内容)
   @"
 hugo server --environment staging ``
-  --cleanDestinationDir ``
   --contentDir '${env:BLOG_CONTENT}' ``
-  --gc ``
-  --logLevel info ``
-  --minify ``
-  --navigateToChanged ``
+  --baseURL "http://writing.ews.internal/" ``
   --port $($Script:Port + 1) ``
-  --printMemoryUsage --printPathWarnings ``
+  --appendPort false ``
+  --printI18nWarnings --printMemoryUsage --printPathWarnings --printUnusedTemplates ``
+  --logLevel warn ``
   --watch ``
+  --navigateToChanged ``
   --forceSyncStatic ``
-  --renderToMemory
+  --cleanDestinationDir ``
+  --renderToMemory ``
+  --gc
 "@, # staging 撰写博客文章 (采用本地主题 渲染本地文件内容)
   @"
 hugo server --environment production ``
-  --minify ``
-  --gc ``
-  --cleanDestinationDir ``
-  --logLevel info ``
-  --navigateToChanged ``
+  --baseURL "http://preview.ews.internal/" ``
   --port $($Script:Port + 2) ``
-  --printMemoryUsage --printPathWarnings ``
-  --watch ``
-  --forceSyncStatic ``
-  --renderToMemory
+  --appendPort false ``
+  --printI18nWarnings --printMemoryUsage --printPathWarnings --printUnusedTemplates ``
+  --logLevel info ``
+  --disableFastRender ``
+  --cleanDestinationDir ``
+  --minify ``
+  --gc
 "@ # production 预览生产环境效果 (采用远程主题 渲染远程仓库内容)
   @"
 hugo --environment production ``
+  --cleanDestinationDir ``
   --minify ``
-  --gc ``
-  --cleanDestinationDir
+  --gc
 "@ # production 正常编译 (测试编译结果 以便纳入自动 CI/CD 工作流)
 )
 
