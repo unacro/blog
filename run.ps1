@@ -11,9 +11,9 @@ $env:HUGO_NOCODB_TOKEN = "This is a NocoDB token @$(Get-Date -Format "yyyy-MM-dd
   # --forceSyncStatic          copy all files when static is changed.
   # --noHTTPCache              prevent HTTP caching
   # --printUnusedTemplates
+  # --panicOnWarning ``
   @"
 hugo server ``
-  --contentDir '${env:BLOG_CONTENT}' ``
   --gc ``
   --logLevel info ``
   --navigateToChanged ``
@@ -22,8 +22,8 @@ hugo server ``
   --watch ``
   --forceSyncStatic ``
   --renderToMemory
-"@, # development
-@"
+"@, # development 开发网站本身 (采用本地主题 渲染远程仓库内容)
+  @"
 hugo server --environment staging ``
   --cleanDestinationDir ``
   --contentDir '${env:BLOG_CONTENT}' ``
@@ -36,27 +36,26 @@ hugo server --environment staging ``
   --watch ``
   --forceSyncStatic ``
   --renderToMemory
-"@, # staging
+"@, # staging 撰写博客文章 (采用本地主题 渲染本地文件内容)
   @"
 hugo server --environment production ``
-  --cleanDestinationDir ``
-  --gc ``
-  --logLevel info ``
   --minify ``
+  --gc ``
+  --cleanDestinationDir ``
+  --logLevel info ``
   --navigateToChanged ``
-  --panicOnWarning ``
-  --port $($Script:Port + 1) ``
+  --port $($Script:Port + 2) ``
   --printMemoryUsage --printPathWarnings ``
   --watch ``
   --forceSyncStatic ``
   --renderToMemory
-"@ # production
+"@ # production 预览生产环境效果 (采用远程主题 渲染远程仓库内容)
   @"
 hugo --environment production ``
   --minify ``
-  --cleanDestinationDir ``
-  --gc
-"@ # production (build & deploy)
+  --gc ``
+  --cleanDestinationDir
+"@ # production 正常编译 (测试编译结果 以便纳入自动 CI/CD 工作流)
 )
 
 [bool]$debugMode = $false
@@ -73,10 +72,12 @@ function Invoke-Command {
   )
   [int]$option = -1
   switch -Wildcard -CaseSensitive ($args[0]) {
+    "0" { $option = 0 }
+    "dev*" { $option = 0 }
     "1" { $option = 1 }
     "edit*" { $option = 1 }
     "2" { $option = 2 }
-    "prev*" { $option = 3 }
+    "prev*" { $option = 2 }
     "3" { $option = 3 }
     "dist*" { $option = 3 }
     default { $option = 0 }

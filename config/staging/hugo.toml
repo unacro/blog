@@ -1,4 +1,4 @@
-theme = "blowfish"                # 禁用云端的 Go module, 使用本地的 Git submodule
+theme = "blowfish"
 baseURL = "https://ews.internal/"
 
 buildDrafts = true

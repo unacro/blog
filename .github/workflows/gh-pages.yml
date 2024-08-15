@@ -9,8 +9,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-22.04
-    env:
-      HUGO_CACHEDIR: /tmp/hugo_cache
     permissions:
       contents: write
     concurrency:
@@ -27,15 +25,9 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      # - uses: actions/cache@v4
-      #   with:
-      #     path: ${{ env.HUGO_CACHEDIR }}
-      #     key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-hugomod-
-
       - name: Build
-        run: hugo --environment production --minify --gc
+        # run: hugo --environment production --minify --gc
+        run: hugo --minify --gc # temp use development environment to enable forked theme
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
