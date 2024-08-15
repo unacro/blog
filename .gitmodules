@@ -1,8 +1,0 @@
-[submodule "content"]
-	path = content
-	url = git@github.com:unacro/blog-content.git
-
-[submodule "themes/blowfish"]
-	path = themes/blowfish
-	url = git@github.com:unacro/blowfish.git
-	branch = dev
