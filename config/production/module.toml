@@ -1,0 +1,16 @@
+[[imports]]
+# 禁用远程的 Hugo module(Go module) 而使用 .Site.Params.theme 设置的本地主题(Git submodule)
+disable = true
+path = "github.com/nunocoracao/blowfish/v2"
+
+[[imports]]
+disable = false
+path = "github.com/unacro/hugo-theme-blowfish-mod"
+
+[[imports]]
+disable = false
+path = "github.com/unacro/games-static-database"
+
+[[imports]]
+disable = false
+path = "github.com/unacro/hugo-shortcodes"

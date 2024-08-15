@@ -1,3 +1,4 @@
+theme = "blowfish"
 baseURL = "https://ews.ink/"
 
 buildDrafts = false
