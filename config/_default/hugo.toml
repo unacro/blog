@@ -24,6 +24,7 @@ tag = "tags"
 category = "categories"
 author = "authors"
 series = "series"
+# project = "projects" # 暂不作为 taxonomy 加入
 
 [sitemap]
 changefreq = 'daily'

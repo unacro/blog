@@ -1,12 +1,12 @@
 theme = "blowfish"
-# baseURL = "https://writing.ews.internal/" # 仅当编译时有效
+baseURL = "https://writing.ews.internal/" # 仅当编译时有效
 
 buildDrafts = true
 buildExpired = true
 buildFuture = true
 
 [languages.zh-cn]
-title = "EWS 实时预览中"
+title = "EWS 实时预览更新中"
 
 
 [[module.imports]]

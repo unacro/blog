@@ -1,5 +1,5 @@
 # $env:HUGO_MODULE_REPLACEMENTS = "github.com/unacro/hugo-theme-blowfish-mod -> ../../hugo-theme-blowfish-mod"
-$env:HUGO_NOCODB_TOKEN = "This is a NocoDB token @$(Get-Date -Format "yyyy-MM-dd HH:mm:ss")"
+$env:HUGO_NOCODB_TOKEN = "This is a fake NocoDB token @$(Get-Date -Format "yyyy-MM-dd HH:mm:ss")"
 
 [int]$Script:Port = 1313
 [string]$Script:Version = "0.1.0"
@@ -25,11 +25,10 @@ hugo server ``
 "@, # development 开发网站本身 (采用本地主题 渲染远程仓库内容)
   @"
 hugo server --environment staging ``
-  --contentDir '${env:BLOG_CONTENT}' ``
-  --baseURL "http://writing.ews.internal/" ``
+  --contentDir '${env:HUGO_CONTENT_DIR}' ``
   --port $($Script:Port + 1) ``
   --appendPort false ``
-  --printI18nWarnings --printMemoryUsage --printPathWarnings --printUnusedTemplates ``
+  --printMemoryUsage --printPathWarnings ``
   --logLevel warn ``
   --watch ``
   --navigateToChanged ``
@@ -43,7 +42,7 @@ hugo server --environment production ``
   --baseURL "http://preview.ews.internal/" ``
   --port $($Script:Port + 2) ``
   --appendPort false ``
-  --printI18nWarnings --printMemoryUsage --printPathWarnings --printUnusedTemplates ``
+  --printMemoryUsage --printPathWarnings ``
   --logLevel info ``
   --disableFastRender ``
   --cleanDestinationDir ``
@@ -82,16 +81,19 @@ function Invoke-Command {
     "dist*" { $option = 3 }
     default { $option = 0 }
   }
-  if ($option -eq 1 -and (-not (Test-Path $env:BLOG_CONTENT))) {
-    [string]$invalidInfo = "Custom hugo content path ${env:BLOG_CONTENT} is invalid."
+  if ($option -eq 1 -and ($env:HUGO_CONTENT_DIR -is [string]) -and (Test-Path $env:HUGO_CONTENT_DIR)) {
+    Write-Host "INFO  Use custom hugo content: `"${env:HUGO_CONTENT_DIR}`""
+  }
+  else {
+    [string]$invalidInfo = "ERROR Custom hugo content `"${env:HUGO_CONTENT_DIR}`" is invalid."
     # Write-Error $invalidInfo
     Write-Warning $invalidInfo
     return
   }
   if ($isDebug) {
-    [string]$debugInfo = "[DEBUG] Script parameters: " + $args
+    [string]$debugInfo = "DEBUG Script parameters: " + $args
     $debugInfo += " (`$option = $option)"
-    $debugInfo += "`n[DEBUG] Try to exec this command:`n" + $Script:CommandString[$option]
+    $debugInfo += "`nDEBUG Try to exec this command:`n" + $Script:CommandString[$option]
     Write-Host $debugInfo
     return
   }
