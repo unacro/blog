@@ -81,14 +81,17 @@ function Invoke-Command {
     "dist*" { $option = 3 }
     default { $option = 0 }
   }
-  if ($option -eq 1 -and ($env:HUGO_CONTENT_DIR -is [string]) -and (Test-Path $env:HUGO_CONTENT_DIR)) {
-    Write-Host "INFO  Use custom hugo content: `"${env:HUGO_CONTENT_DIR}`""
-  }
-  else {
-    [string]$invalidInfo = "ERROR Custom hugo content `"${env:HUGO_CONTENT_DIR}`" is invalid."
-    # Write-Error $invalidInfo
-    Write-Warning $invalidInfo
-    return
+  if ($option -eq 1) {
+    if (($env:HUGO_CONTENT_DIR -is [string]) -and (Test-Path $env:HUGO_CONTENT_DIR)) {
+      
+      Write-Host "INFO  Use custom hugo content: `"${env:HUGO_CONTENT_DIR}`""
+    }
+    else {
+      [string]$invalidInfo = "Custom hugo content `"${env:HUGO_CONTENT_DIR}`" is invalid."
+      # Write-Error $invalidInfo
+      Write-Warning $invalidInfo
+      return
+    }
   }
   if ($isDebug) {
     [string]$debugInfo = "DEBUG Script parameters: " + $args
