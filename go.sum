@@ -1,6 +1,6 @@
-github.com/unacro/games-static-database v0.0.0-20240829113541-fc96d855bc35 h1:yZyiDrTNr+z20qoqdTPIMcBMpOrSMnOl1E1LdxsDWCw=
-github.com/unacro/games-static-database v0.0.0-20240829113541-fc96d855bc35/go.mod h1:UztwcYrlZSg2SRQzosCBFsor22RM2/0xpl3CoKRLocw=
-github.com/unacro/hugo-shortcodes v0.0.0-20240829113608-d2d6006ed2e2 h1:QoyiDokFuaRuX0YFl+bl1qYfNs5SIYwzrK5FjfixC1k=
-github.com/unacro/hugo-shortcodes v0.0.0-20240829113608-d2d6006ed2e2/go.mod h1:PFEhzH88q8f3u7sjPFzsImvpRxACaw6IHDsW7WXMmxI=
-github.com/unacro/hugo-theme-blowfish-mod v0.1.3 h1:72tJp5Rnl/OXDEQG5uEzxnpDsDwtrpE489n3bTnRC+k=
-github.com/unacro/hugo-theme-blowfish-mod v0.1.3/go.mod h1:y342RZDIqr8uNF38nY+avi7HhKXfljSS8WjsTAlCvB8=
+github.com/unacro/games-static-data v0.3.0 h1:qCIys/LD/vZAcHX/C0YWdtyscmvDp7bwdRQtetfXAeo=
+github.com/unacro/games-static-data v0.3.0/go.mod h1:kVk5E2PTR3kVcyBg9No3VjQPpzXGOlByqtKCQusZZN0=
+github.com/unacro/hugo-shortcodes v0.5.0 h1:TvTdUBin98omn74aLED9Qd7Ohf0j4mQt5M135ScWLOQ=
+github.com/unacro/hugo-shortcodes v0.5.0/go.mod h1:Gim3uhTYiBdNGeSRIyiOZG374z44lb89k51FDQc0dik=
+github.com/unacro/hugo-theme-blowfish-mod v0.5.0 h1:agCogyxgeelS5Bm9NM7fLRLH8AE+812IYTeM6eUgQZ8=
+github.com/unacro/hugo-theme-blowfish-mod v0.5.0/go.mod h1:Lz4bUoJ/aywNz3MvkNtlfzJo+ro0izJz2Ma0qxxa3JM=

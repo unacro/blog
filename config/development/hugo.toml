@@ -16,12 +16,19 @@ path = "github.com/nunocoracao/blowfish/v2"
 
 [[module.imports]]
 disable = false
-path = "github.com/unacro/hugo-theme-blowfish-mod"
+# path = "github.com/unacro/hugo-theme-blowfish-mod"
+path = "../../hugo-theme-blowfish-mod"
 
 [[module.imports]]
 disable = false
-path = "github.com/unacro/games-static-database"
+# path = "github.com/unacro/hugo-shortcodes"
+path = "../../hugo-shortcodes"
 
 [[module.imports]]
 disable = false
-path = "github.com/unacro/hugo-shortcodes"
+# path = "github.com/unacro/games-static-data"
+path = "../../../Game/games-static-data"
+
+[[module.imports]]
+disable = false
+path = "../../hugo-developing"

@@ -8,8 +8,8 @@ path = "github.com/unacro/hugo-theme-blowfish-mod"
 
 [[imports]]
 disable = false
-path = "github.com/unacro/games-static-database"
+path = "github.com/unacro/hugo-shortcodes"
 
 [[imports]]
 disable = false
-path = "github.com/unacro/hugo-shortcodes"
+path = "github.com/unacro/games-static-data"

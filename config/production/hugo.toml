@@ -1,10 +1,10 @@
 theme = "blowfish"
 baseURL = "https://ews.ink/"
+ignoreLogs = ["debug"]
 
 buildDrafts = false
 buildExpired = false
 buildFuture = false
-
 
 [[module.imports]]
 # 禁用远程的 Hugo module(Go module) 而使用 .Site.Params.theme 设置的本地主题(Git submodule)
@@ -17,8 +17,8 @@ path = "github.com/unacro/hugo-theme-blowfish-mod"
 
 [[module.imports]]
 disable = false
-path = "github.com/unacro/games-static-database"
+path = "github.com/unacro/hugo-shortcodes"
 
 [[module.imports]]
 disable = false
-path = "github.com/unacro/hugo-shortcodes"
+path = "github.com/unacro/games-static-data"

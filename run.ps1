@@ -1,5 +1,5 @@
-# $env:HUGO_MODULE_REPLACEMENTS = "github.com/unacro/hugo-theme-blowfish-mod -> ../../hugo-theme-blowfish-mod"
-$env:HUGO_NOCODB_TOKEN = "This is a fake NocoDB token @$(Get-Date -Format "yyyy-MM-dd HH:mm:ss")"
+# $env:HUGO_MODULE_REPLACEMENTS = "github.com/unacro/hugo-theme-blowfish-mod -> ../../hugo-theme-blowfish-mod, github.com/unacro/hugo-shortcodes -> ../../hugo-shortcodes"
+$env:HUGO_MOCK_DATA = "This is a fake message @$(Get-Date -Format "yyyy-MM-dd HH:mm:ss")"
 
 [int]$Script:Port = 1313
 [string]$Script:Version = "0.1.0"
@@ -11,6 +11,7 @@ $env:HUGO_NOCODB_TOKEN = "This is a fake NocoDB token @$(Get-Date -Format "yyyy-
   @"
 hugo server ``
   --baseURL "http://dev.ews.internal/" ``
+  --contentDir '${env:HUGO_CONTENT_DIR}' ``
   --port ${Script:Port} ``
   --appendPort false ``
   --printI18nWarnings --printMemoryUsage --printPathWarnings --printUnusedTemplates ``
@@ -22,7 +23,7 @@ hugo server ``
   --cleanDestinationDir ``
   --renderToMemory ``
   --gc
-"@, # development 开发网站本身 (采用本地主题 渲染远程仓库内容)
+"@, # development 开发网站本身 (采用本地主题 渲染本地文件内容)
   @"
 hugo server --environment staging ``
   --contentDir '${env:HUGO_CONTENT_DIR}' ``
@@ -83,7 +84,6 @@ function Invoke-Command {
   }
   if ($option -eq 1) {
     if (($env:HUGO_CONTENT_DIR -is [string]) -and (Test-Path $env:HUGO_CONTENT_DIR)) {
-      
       Write-Host "INFO  Use custom hugo content: `"${env:HUGO_CONTENT_DIR}`""
     }
     else {

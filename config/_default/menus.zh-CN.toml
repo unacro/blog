@@ -70,7 +70,7 @@ weight = 10
 [[subnavigation]]
 name = "有空一起挨打"
 pre = "skull-crossbones"
-pageRef = "co-op"
+pageRef = "interests"
 weight = 20
 
 [[subnavigation]]

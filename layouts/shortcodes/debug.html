@@ -1,7 +1,0 @@
-<p>{{- $domain := index (index (findRESubmatch `^https?://([^/]+)` $.Site.BaseURL) 0) 1 -}}{{- $domain -}}</p>
-
-{{ warnidf "debug" "The %q shortcode was unable to find %s. See %s" .Name "$file" .Position }}
-
-<p>HUGO_NOCODB_TOKEN = {{ getenv "HUGO_NOCODB_TOKEN" }}</p>
-
-<p>{{ debug.Dump .Site.Params }}</p>
